@@ -130,6 +130,9 @@ h3 {
 p {
     margin: 10px;
 }
+img {
+    width: 100%;
+}
 /* utilidades */
 .container {
     max-width: 960px;
@@ -267,11 +270,16 @@ margin-bottom: 1rem;
 }
 /* estilo movil */
 @media screen and (max-width:768px) {
+/* #top menu {
+position: fixed;
+top: 0;
+width: 100%} */
     #showcase {
         height: 100vh;
     }
     #info .info-img{
         display: none;
+        /* flex: 0; */
     }
     #features {
       flex-direction: column;
@@ -286,30 +294,25 @@ margin-bottom: 1rem;
         display: block; 
     }
 }
-/* About */
-#about {
-    height: 30vh;
+/* About-info */
+#about-info {
+display: flex;
+}
+#about-info .about-info-left {
+flex: 2;
+}
+#about-info .about-info-right {
+flex: 1;
+}
+#about-info .about-info-right img{
+border-radius: 50%;
+}
+
+    /* height: 30vh;
     box-sizing: border-box;
-    display: flex;
     justify-content:space-between;
     align-items:center;
-    color: black;
-}
-#about .about-container {
-    text-align: left;
-}
-#about .about-container h2 {
-    font-size: 2em;
-}
-#about .about-container p {
-    font-size: 1.5em;
-    padding: 0 20px;
-}
-#about .about-container-img {
-    width: 10px;
-    height: 10px;
-    border-radius: 20%;
-}
+    color: black;*/
 /* Seccion opinion */
 #opinion {
     display: flex;
