@@ -1,334 +1,347 @@
- /* Reset mínimo */
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
- }
-/* variables en css */
-:root {
-    --color-primario: rgba(9, 30, 34, 0.678);
-    --color-secundario: rgba(229, 148, 0, 0.9);
-    --hamburger-size: 60px;
-    --menu-speed: 0.75s;
-  }
-.menu-container {
-    position: fixed;
-    top: 0;
-    left: var(--hamburger-size);
-    z-index: 1;
-    display:none; 
+/* Reset mínimo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.menu-container .toggler {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    width: var(--hamburger-size);
-    height: var(--hamburger-size);
-    cursor: pointer;
-    opacity: 0;
-}
-/* contenedor para el icono del menu */
-.menu-container .hamburger {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    width: var(--hamburger-size);
-    height: var(--hamburger-size);
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem;
-    border-radius: 6px;
-    background-color: var(--color-secundario);
-}
-/* Dibujar las lineas del menu */
-.menu-container .hamburger>div {
-    width: 100%;
-    height: 4px;
-    position: relative;
-    background-color: #fff;
-    transition: all 0.4s ease;
-}
-.menu-container .hamburger>div::before,
-.menu-container .hamburger>div::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    top: -10px;
-    background-color: inherit;
-}
-.menu-container .hamburger>div::after {
-    top: 10px;
-}
-/* Animacion del icono del menu */
-.menu-container .toggler:checked + .hamburger > div {
-    transform: rotate(135deg);
-}
-.menu-container .toggler:checked+.hamburger>div::before,
-.menu-container .toggler:checked+.hamburger>div::after {
-    transform: rotate(90deg);
-    top: 0;
-}
-.menu-container .toggler:checked + .hamburger > div {
-    transform: rotate();
-}
-/* CSS para la capa del menu */
-.menu-container .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* visibility: hidden; */
-    transform: translateX(100vw);
-    transition: all 0.4s ease;
-    background-color: #333;
-}
-.menu-container .menu ul li {
-    list-style: none;
-    color: #fff;
-    font-size: 1.5rem;
-    padding: 1rem;
-    text-align: center;
-}
-.menu-container .menu ul li a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.4s ease;
-}
-.menu-container .menu ul li a:hover {
-    color: var(--color-secundario);
-}
-.menu-container .toggler:checked~.menu {
-    /* visibility: visible; */
-    transform: translateX(0);
-}
+
 html,
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7rem;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 a {
-    color: #333;
-    text-decoration: none;
+  color: #333;
+  text-decoration: none;
 }
 h1,
 h2,
 h3 {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 p {
-    margin: 10px;
+  margin: 10px;
 }
 img {
-    width: 100%;
+  width: 100%;
 }
 /* utilidades */
 .container {
-    max-width: 960px;
-    margin: 0 auto;
+  max-width: 960px;
+  margin: 0 auto;
 }
 .text-primary {
-    color: #f7c08a;
+  color: #f7c08a;
 }
 .btn {
-    display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 10px;
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 .btn:hover {
-    background-color: #f7c08a;
-    color: #333;
+  background-color: #f7c08a;
+  color: #333;
 }
 /* colores para reutilizar */
 .bg-dark {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
 }
 .bg-light {
-    background-color: #fff;
-    color: #333;
+  background-color: #fff;
+  color: #333;
 }
 .bg-primary {
-    background-color: #f88844;
-    color: #333;
+  background-color: #f88844;
+  color: #333;
 }
 .bg-secondary {
-    background-color: #ffb88c;
-    color: #333;
+  background-color: #ffb88c;
+  color: #333;
 }
 /* paddings para reutilizar */
 .pd-1 {
-    padding: 30px 0;
+  padding: 30px 0;
 }
 .pd-2 {
-    padding: 20px;
+  padding: 20px;
 }
 .pd-3 {
-    padding: 30px;
+  padding: 30px;
 }
 /* Navbar */
 #top-menu {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
 }
 #top-menu a {
-    color: #fff;
+  color: #fff;
 }
 #top-menu h1 {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 #top-menu .top-menu-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 #top-menu .top-menu-container ul {
-    list-style: none;
-    display: flex;
-    gap: 10px;
+  list-style: none;
+  display: flex;
+  gap: 10px;
 }
 #top-menu .top-menu-container ul a {
-    display: inline-block;
-    padding: 20px;
+  display: inline-block;
+  padding: 20px;
 }
 #top-menu .top-menu-container ul a:hover {
-    background-color: #444;
-    color: #f88844;
+  background-color: #444;
+  color: #f88844;
 }
 #top-menu .top-menu-container ul a.active {
-    border-bottom: 4px solid #f88844;
+  border-bottom: 4px solid #f88844;
 }
 /* Showcase */
 #showcase {
-    height: 30vh;
-    background: url("../img/showcase.jpg") no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+  height: 30vh;
+  background: url("../img/showcase.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 #showcase .showcase-container {
-    text-align: center;
+  text-align: center;
 }
 #showcase .showcase-container h2 {
-    font-size: 2em;
+  font-size: 2em;
 }
 #showcase .showcase-container p {
-    font-size: 1.5em;
-    padding: 0 20px;
+  font-size: 1.5em;
+  padding: 0 20px;
 }
 /* Seccion info */
 #info {
-    display: flex;
-    min-height: 30vh;
+  display: flex;
+  min-height: 30vh;
 }
 #info .info-img {
-    background: url("../img/photo-1.jpg") no-repeat center center/cover;
-    flex: 1 1 auto;
+  background: url("../img/photo-1.jpg") no-repeat center center/cover;
+  flex: 1 1 auto;
+  /* flex-grow:1;
+    flex-shrink:1;
+    flex-basis:auto; */
 }
 #info .info-content {
-    background-color: #333;
-    padding: 20px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1 0 0%
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex: 1 0 0%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 /* Section Features */
 #features {
-    display: flex;
+  display: flex;
 }
 #features .box {
-padding: 30px;
-text-align: center;
-font-style: italic;
+  padding: 30px;
+  text-align: center;
 }
 #features .box i {
-font-size: 5rem; /*Los iconos se tratan como fuentes de texto*/
-margin-bottom: 1rem;
-}
-/* Main-Footer */
-#main-footer {
-    text-align: center;
-    padding: 20px;
-}
-/* estilo movil */
-@media screen and (max-width:768px) {
-/* #top menu {
-position: fixed;
-top: 0;
-width: 100%} */
-    #showcase {
-        height: 100vh;
-    }
-    #info .info-img{
-        display: none;
-        /* flex: 0; */
-    }
-    #features {
-      flex-direction: column;
-    }
-    #hamburger-menu {
-    display: block;
-    }
-    #top-menu .top-menu-container {
-        display: none;
-    }
-    .menu-container {
-        display: block; 
-    }
+  font-size: 5rem; /*Los iconos se tratan como fuentes de texto*/
+  margin-bottom: 1rem;
 }
 /* About-info */
 #about-info {
-display: flex;
+  display: flex;
+  height: 50vh;
 }
 #about-info .about-info-left {
-flex: 2;
+  flex: 2;
 }
 #about-info .about-info-right {
-flex: 1;
+  flex: 1;
 }
-#about-info .about-info-right img{
-border-radius: 50%;
+#about-info .about-info-right img {
+  border-radius: 50%;
 }
-
-    /* height: 30vh;
-    box-sizing: border-box;
-    justify-content:space-between;
-    align-items:center;
-    color: black;*/
-/* Seccion opinion */
-#opinion {
-    display: flex;
-    /* width: 100vh;
-    height: 100vh; */
-    min-height: 50vh;
+/* Testimonial */
+#testimonial {
+  background: url(../img/test-bg.jpg) no-repeat center center/cover;
+  text-align: center;
+  padding-top: 30px;
 }
-#opinion .opinion-img {
-flex: 1 1 auto;
-background: url("");
+#testimonial h2 {
+  font-size: 2rem;
+  color: #fff;
 }
-#opinion .opinion-content {
-    background: url(../img/test-bg.jpg) no-repeat center center/cover;
-    min-width: 100%;
-    flex: 1 0 0%;
-    color: #fff;
-    display: flex;
-    justify-content:center
+#testimonial .opinions {
+  display: flex;
+  gap: 40px;
+}
+#testimonial .opinions .opinions-box {
+  padding: 20px;
+  margin: 40px;
+  border-radius: 8px;
+  text-align: left;
+  opacity: 0.9;
+}
+#testimonial .opinions .opinions-box img {
+  width: 100px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
+/* Main-Footer */
+#main-footer {
+  text-align: center;
+  padding: 20px;
+}
+/* estilo movil */
+@media screen and (max-width: 768px) {
+  /* #top menu {
+position: fixed;
+top: 0;
+width: 100%} */
+  #showcase {
+    height: 100vh;
+  }
+  #info .info-img {
+    display: none;
+    /* flex: 0; */
+  }
+  #features {
+    flex-direction: column;
+  }
+  #about-info .about-info-right {
+    flex: 0;
+  }
+  #testimonial .opinions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  #hamburger-menu {
+    display: block;
+  }
+  #top-menu .top-menu-container {
+    display: none;
+  }
+  .menu-container {
+    display: block;
+  }
+}
+/* variables en css */
+:root {
+  --color-primario: rgba(9, 30, 34, 0.678);
+  --color-secundario: rgba(229, 148, 0, 0.9);
+  --hamburger-size: 60px;
+  --menu-speed: 0.75s;
+}
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: var(--hamburger-size);
+  z-index: 1;
+  display: none;
+}
+.menu-container .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: var(--hamburger-size);
+  height: var(--hamburger-size);
+  cursor: pointer;
+  opacity: 0;
+}
+/* contenedor para el icono del menu */
+.menu-container .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: var(--hamburger-size);
+  height: var(--hamburger-size);
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 6px;
+  background-color: var(--color-secundario);
+}
+/* Dibujar las lineas del menu */
+.menu-container .hamburger > div {
+  width: 100%;
+  height: 4px;
+  position: relative;
+  background-color: #fff;
+  transition: all 0.4s ease;
+}
+.menu-container .hamburger > div::before,
+.menu-container .hamburger > div::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: -10px;
+  background-color: inherit;
+}
+.menu-container .hamburger > div::after {
+  top: 10px;
+}
+/* Animacion del icono del menu */
+.menu-container .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+.menu-container .toggler:checked + .hamburger > div::before,
+.menu-container .toggler:checked + .hamburger > div::after {
+  transform: rotate(90deg);
+  top: 0;
+}
+.menu-container .toggler:checked + .hamburger > div {
+  transform: rotate();
+}
+/* CSS para la capa del menu */
+.menu-container .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* visibility: hidden; */
+  transform: translateX(100vw);
+  transition: all 0.4s ease;
+  background-color: #333;
+}
+.menu-container .menu ul li {
+  list-style: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+.menu-container .menu ul li a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+.menu-container .menu ul li a:hover {
+  color: var(--color-secundario);
+}
+.menu-container .toggler:checked ~ .menu {
+  /* visibility: visible; */
+  transform: translateX(0);
 }
