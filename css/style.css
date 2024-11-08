@@ -319,7 +319,7 @@ margin-bottom: 1rem;
 }
 #opinion .opinion-img {
 flex: 1 1 auto;
-background: url("")
+background: url("");
 }
 #opinion .opinion-content {
     background: url(../img/test-bg.jpg) no-repeat center center/cover;
